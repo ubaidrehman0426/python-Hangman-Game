@@ -24,7 +24,7 @@ To run the Hangman game, ensure you have Python installed on your machine. You c
 ## Usage
 To start the game, run the following command in your terminal:
 ```bash
-python hangman.py
+python app.py
 ```
 
 ## Game Rules
@@ -32,8 +32,11 @@ python hangman.py
 - Each time you guess a letter that is not in the word, you lose one attempt.
 - The game continues until you either guess the word or run out of attempts.
 ## Game Screen Shots
-<img width="762" alt="ss" src="https://github.com/user-attachments/assets/d3bf942a-1c3d-4aff-a8e4-7207eae9c006" />
-<img width="608" alt="ss2" src="https://github.com/user-attachments/assets/de1f69a9-a894-41d0-9177-f85e011f5251" />
+<img width="1807" height="959" alt="image" src="https://github.com/user-attachments/assets/008533d9-b8af-49b8-95aa-7678e3c76b3d" />
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/00b017e6-3d96-47fc-a4d7-529ffdd2c098" />
+
 
 ## Contributing
 Contributions are welcome! If you have suggestions for improvements or new features, feel free to fork the repository and submit a pull request.
