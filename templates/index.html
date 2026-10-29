@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f7fc">
+    <title>Hangman — Word Challenge</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+    <main class="app">
+        <header class="topbar">
+            <a href="/" class="brand">
+                <span class="brand-icon">H</span>
+                <span>Hangman<span class="brand-muted">.game</span></span>
+            </a>
+            <span class="game-badge"><span class="live-dot"></span> WORD CHALLENGE</span>
+        </header>
+
+        <section class="hero">
+            <div class="eyebrow">THINK • GUESS • WIN</div>
+            <h1>Can you crack<br>the <span>secret word?</span></h1>
+            <p>Guess the letters before your attempts run out.</p>
+        </section>
+
+        <section class="game-layout">
+            <article class="drawing-card">
+                <div class="card-heading">
+                    <div>
+                        <span class="section-label">YOUR PROGRESS</span>
+                        <h2>The Hangman</h2>
+                    </div>
+                    <span id="attemptBadge" class="attempt-badge">6 left</span>
+                </div>
+
+                <div class="drawing-area">
+                    <svg id="hangmanDrawing" viewBox="0 0 300 280"
+                         role="img" aria-label="Hangman drawing showing your mistakes">
+                        <g class="scaffold">
+                            <path d="M48 245 H252" />
+                            <path d="M85 245 V35 H190 V63" />
+                            <path d="M85 65 L115 35" />
+                        </g>
+                        <circle class="body-part" data-part="1" cx="190" cy="85" r="22"/>
+                        <path class="body-part" data-part="2" d="M190 107 V168"/>
+                        <path class="body-part" data-part="3" d="M190 122 L157 149"/>
+                        <path class="body-part" data-part="4" d="M190 122 L223 149"/>
+                        <path class="body-part" data-part="5" d="M190 168 L160 210"/>
+                        <path class="body-part" data-part="6" d="M190 168 L220 210"/>
+                    </svg>
+                    <div class="drawing-caption" id="drawingCaption">You're doing great. Keep going!</div>
+                </div>
+
+                <div class="mistakes-row">
+                    <span>Incorrect guesses</span>
+                    <div id="mistakeDots" class="mistake-dots" aria-label="Incorrect guesses"></div>
+                </div>
+            </article>
+
+            <article class="play-card">
+                <div class="card-heading">
+                    <div>
+                        <span class="section-label">MYSTERY WORD</span>
+                        <h2>Guess the word</h2>
+                    </div>
+                    <span class="word-icon">Aa</span>
+                </div>
+
+                <div class="word-info">
+                    <span>WORD PROGRESS</span>
+                    <span id="wordProgress">0 / 0 letters</span>
+                </div>
+
+                <div id="wordDisplay" class="word-display"
+                     aria-label="Hidden word" aria-live="polite"></div>
+
+                <div class="keyboard-heading">
+                    <span class="section-label">CHOOSE A LETTER</span>
+                    <span class="keyboard-hint">Tap or type A–Z</span>
+                </div>
+
+                <div id="keyboard" class="keyboard" aria-label="Letter keyboard"></div>
+
+                <div class="play-footer">
+                    <span class="keyboard-hint">Every wrong guess costs one attempt.</span>
+                    <button id="newGameBtn" class="restart-button">
+                        <span>↻</span> New Game
+                    </button>
+                </div>
+            </article>
+        </section>
+
+        <div id="message" class="message" role="status" aria-live="polite"></div>
+
+        <section class="tips">
+            <span class="tips-icon">✦</span>
+            <div>
+                <strong>Pro tip</strong>
+                <p>Start with common letters like E, A, R, T, and O to reveal more of the word.</p>
+            </div>
+        </section>
+
+        <footer>
+            <span>HANGMAN.GAME</span>
+            <span>A little word challenge, a lot of fun.</span>
+        </footer>
+    </main>
+</body>
+</html>
